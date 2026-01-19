@@ -1,0 +1,186 @@
+@model SwapSmart.Models.Item
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card shadow-sm mb-4">
+            <div class="card-body p-0">
+                @if (Model.Images.Any())
+                {
+                    <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            @for (int i = 0; i < Model.Images.Count; i++)
+                            {
+                                <div class="carousel-item @(i == 0 ? "active" : "")">
+                                    <img src="@Model.Images.ElementAt(i).ImagePath" class="d-block w-100" alt="@Model.Title" style="height: 500px; object-fit: cover;" />
+                                </div>
+                            }
+                        </div>
+                        @if (Model.Images.Count > 1)
+                        {
+                            <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Önceki</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Sonraki</span>
+                            </button>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <div class="bg-light d-flex align-items-center justify-content-center" style="height: 500px;">
+                        <span class="text-muted">Fotoğraf Yok</span>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card shadow-sm mb-4">
+            <div class="card-body p-4">
+                <h1 class="card-title mb-3">@Model.Title</h1>
+                
+                <div class="mb-4">
+                    <h5 class="fw-bold">Açıklama</h5>
+                    <p class="text-muted">@Model.Description</p>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-md-6 mb-3">
+                        <h5 class="fw-bold">Tahmini Değer Aralığı</h5>
+                        <p class="text-muted fs-5">
+                            ₺@Model.EstimatedMinValue.ToString("N0") - ₺@Model.EstimatedMaxValue.ToString("N0")
+                        </p>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <h5 class="fw-bold">Takas Edilmek İstenen</h5>
+                        <p class="text-muted fs-5">
+                            <span class="badge bg-info text-dark fs-6">@Model.WantedItemName</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <h5 class="fw-bold">Konum</h5>
+                    <p class="text-muted">
+                        <span class="badge bg-secondary">📍 @Model.City, @Model.District</span>
+                    </p>
+                </div>
+
+                <div class="mb-4">
+                    <small class="text-muted">
+                        <strong>Oluşturulma Tarihi:</strong> @Model.CreatedAt.ToString("dd.MM.yyyy HH:mm")
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="card shadow-sm sticky-top" style="top: 20px;">
+            <div class="card-body p-4">
+                @if (ViewBag.IsOwner == true)
+                {
+                    <div class="alert alert-info mb-0">
+                        <strong>ℹ️ Bilgi:</strong> Bu ilan size aittir.
+                    </div>
+                }
+                else if (User.Identity?.IsAuthenticated == true)
+                {
+                    <h5 class="card-title mb-3">İşlemler</h5>
+                    <div class="d-grid gap-2">
+                        <a asp-controller="Trade" asp-action="Send" asp-route-id="@Model.Id" class="btn btn-primary btn-lg">
+                            Takas Teklifi Gönder
+                        </a>
+                    </div>
+                }
+                else
+                {
+                    <div class="text-center">
+                        <p class="mb-3">Takas teklifi göndermek için giriş yapmanız gerekiyor.</p>
+                        <a asp-area="Identity" asp-page="/Account/Login" class="btn btn-primary w-100">Giriş Yap</a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@{
+    var matchingItems = ViewBag.MatchingItems as List<SwapSmart.Models.Item> ?? new List<SwapSmart.Models.Item>();
+}
+
+@if (matchingItems.Any())
+{
+    <div class="row mt-5">
+        <div class="col-12">
+            <h3 class="mb-4">Bu İlanla Uyumlu Takaslar</h3>
+            <div class="row g-4">
+                @foreach (var match in matchingItems)
+                {
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card shadow-sm h-100" style="transition: transform 0.2s, box-shadow 0.2s;">
+                            <a asp-action="Detail" asp-route-id="@match.Id" style="text-decoration: none; color: inherit;">
+                                @if (match.Images.Any())
+                                {
+                                    <img src="@match.Images.First().ImagePath" class="card-img-top" alt="@match.Title" style="height: 200px; object-fit: cover; border-radius: 16px 16px 0 0;" />
+                                }
+                                else
+                                {
+                                    <div class="bg-light d-flex align-items-center justify-content-center" style="height: 200px; border-radius: 16px 16px 0 0;">
+                                        <span class="text-muted small">Fotoğraf Yok</span>
+                                    </div>
+                                }
+                                
+                                <div class="card-body d-flex flex-column">
+                                    <h6 class="card-title">@match.Title</h6>
+                                    <small class="text-muted mb-2">
+                                        ₺@match.EstimatedMinValue.ToString("N0") - ₺@match.EstimatedMaxValue.ToString("N0")
+                                    </small>
+                                    <span class="badge bg-info text-dark mb-2 small">İstenen: @match.WantedItemName</span>
+                                    <span class="badge bg-secondary small">📍 @match.City, @match.District</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}
+else if (Model.Status == ItemStatus.Active)
+{
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="card shadow-sm">
+                <div class="card-body text-center p-4">
+                    <h5 class="mb-3">Bu İlanla Uyumlu Takaslar</h5>
+                    <p class="text-muted mb-0">Şu an bu ilan için uygun takas bulunamadı.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="row mt-4">
+    <div class="col-12">
+        <a asp-action="Index" asp-controller="Home" class="btn btn-outline-secondary">
+            ← Ana Akışa Dön
+        </a>
+    </div>
+</div>
+
+<style>
+    .card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    }
+</style>

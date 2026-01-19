@@ -1,0 +1,313 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/obj/Debug/net9.0/scopedcss/projectbundle/SwapSmart.bundle.scp.css",
+      "PackagePath": "staticwebassets/SwapSmart.uj3strcbol.bundle.scp.css"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/css/site.css",
+      "PackagePath": "staticwebassets/css/site.css"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/favicon.ico",
+      "PackagePath": "staticwebassets/favicon.ico"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/js/site.js",
+      "PackagePath": "staticwebassets/js/site.js"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/LICENSE",
+      "PackagePath": "staticwebassets/lib/bootstrap"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css.map"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css.map"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js.map"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js.map"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js.map"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/LICENSE.txt"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/jquery-validation/LICENSE.md",
+      "PackagePath": "staticwebassets/lib/jquery-validation/LICENSE.md"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/jquery-validation/dist/additional-methods.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.js"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.min.js"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.js"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.min.js"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/jquery/LICENSE.txt",
+      "PackagePath": "staticwebassets/lib/jquery/LICENSE.txt"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/jquery/dist/jquery.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.js"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/jquery/dist/jquery.min.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.js"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/jquery/dist/jquery.min.map",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/jquery/dist/jquery.slim.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.slim.js"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/jquery/dist/jquery.slim.min.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.slim.min.js"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/lib/jquery/dist/jquery.slim.min.map",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.slim.min.map"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/uploads/items/06f43c0f-6ead-402d-a35a-e3388c4df3ef.png",
+      "PackagePath": "staticwebassets/uploads/items/06f43c0f-6ead-402d-a35a-e3388c4df3ef.png"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/uploads/items/35e5769a-3766-4631-bd1b-888d11119eae.png",
+      "PackagePath": "staticwebassets/uploads/items/35e5769a-3766-4631-bd1b-888d11119eae.png"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/uploads/items/71f39c96-eab3-4454-87c8-66d9c02962e0.png",
+      "PackagePath": "staticwebassets/uploads/items/71f39c96-eab3-4454-87c8-66d9c02962e0.png"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/uploads/items/84ffd970-4da6-40a9-bff7-63d9f238b15b.png",
+      "PackagePath": "staticwebassets/uploads/items/84ffd970-4da6-40a9-bff7-63d9f238b15b.png"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/uploads/items/874242bf-00b2-4dfa-a515-fc33b75de4ee.png",
+      "PackagePath": "staticwebassets/uploads/items/874242bf-00b2-4dfa-a515-fc33b75de4ee.png"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/uploads/items/bc55a428-ff5a-4a92-bf2a-7313186d6bca.png",
+      "PackagePath": "staticwebassets/uploads/items/bc55a428-ff5a-4a92-bf2a-7313186d6bca.png"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/uploads/items/c7a3b007-442f-4c0b-b71f-7d12773ea120.png",
+      "PackagePath": "staticwebassets/uploads/items/c7a3b007-442f-4c0b-b71f-7d12773ea120.png"
+    },
+    {
+      "Id": "/Users/ahmet/Desktop/finalProje/SwapSmart/wwwroot/uploads/items/e6101685-e1de-4655-bbb1-1024f9473a1e.png",
+      "PackagePath": "staticwebassets/uploads/items/e6101685-e1de-4655-bbb1-1024f9473a1e.png"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.SwapSmart.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.SwapSmart.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.build.SwapSmart.props",
+      "PackagePath": "build\\SwapSmart.props"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.buildMultiTargeting.SwapSmart.props",
+      "PackagePath": "buildMultiTargeting\\SwapSmart.props"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.buildTransitive.SwapSmart.props",
+      "PackagePath": "buildTransitive\\SwapSmart.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

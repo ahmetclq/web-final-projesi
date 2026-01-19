@@ -1,0 +1,122 @@
+﻿@model IEnumerable<SwapSmart.Models.Item>
+@{
+    ViewData["Title"] = "Ana Akış";
+}
+
+@if (User.Identity?.IsAuthenticated == true)
+{
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card shadow-sm">
+                <div class="card-body p-4">
+                    <h4 class="card-title mb-3">Filtreler</h4>
+                    <form method="get" asp-action="Index" class="row g-3 align-items-end">
+                        <div class="col-md-4">
+                            <label for="district" class="form-label fw-bold">İlçe</label>
+                            <select name="district" id="district" class="form-select">
+                                <option value="">Tüm İlçeler</option>
+                                @if (ViewBag.AvailableDistricts != null)
+                                {
+                                    @foreach (var dist in (ViewBag.AvailableDistricts as List<string>)!)
+                                    {
+                                        <option value="@dist" selected="@(ViewBag.SelectedDistrict == dist)">@dist</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="submit" class="btn btn-primary w-100">Filtrele</button>
+                        </div>
+                        <div class="col-md-4">
+                            <a asp-action="Index" class="btn btn-outline-secondary w-100">Temizle</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="row">
+            <div class="col-12">
+                <div class="card shadow-sm">
+                    <div class="card-body text-center p-5">
+                        <p class="text-muted mb-4">@ViewBag.UserCity'de henüz ilan yok.</p>
+                        <a asp-controller="Item" asp-action="Create" class="btn btn-primary">İlk İlanınızı Verin</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="row g-4">
+            @foreach (var item in Model)
+            {
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card shadow-sm h-100" style="transition: transform 0.2s, box-shadow 0.2s;">
+                        <a asp-controller="Item" asp-action="Detail" asp-route-id="@item.Id" style="text-decoration: none; color: inherit;">
+                            @if (item.Images.Any())
+                            {
+                                <img src="@item.Images.First().ImagePath" class="card-img-top" alt="@item.Title" style="height: 250px; object-fit: cover; border-radius: 16px 16px 0 0;" />
+                            }
+                            else
+                            {
+                                <div class="bg-light d-flex align-items-center justify-content-center" style="height: 250px; border-radius: 16px 16px 0 0;">
+                                    <span class="text-muted">Fotoğraf Yok</span>
+                                </div>
+                            }
+                            
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">@item.Title</h5>
+                                
+                                <div class="mb-2">
+                                    <small class="text-muted">
+                                        <strong>Değer:</strong> ₺@item.EstimatedMinValue.ToString("N0") - ₺@item.EstimatedMaxValue.ToString("N0")
+                                    </small>
+                                </div>
+                                
+                                <div class="mb-2">
+                                    <span class="badge bg-info text-dark">İstenen: @item.WantedItemName</span>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <span class="badge bg-secondary">📍 @item.City, @item.District</span>
+                                </div>
+                                
+                                <div class="mt-auto">
+                                    <button class="btn btn-primary w-100">Detay</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+}
+else
+{
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow-sm">
+                <div class="card-body text-center p-5">
+                    <h2 class="display-4 fw-bold mb-3" style="color: #2d3436;">SwapSmart – Sadece Takas</h2>
+                    <p class="lead text-muted mb-4">Satış yok, fiyat yok. Sadece takas.</p>
+                    <div class="d-flex gap-3 justify-content-center">
+                        <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-primary btn-lg">Kayıt Ol</a>
+                        <a asp-area="Identity" asp-page="/Account/Login" class="btn btn-outline-primary btn-lg">Giriş Yap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<style>
+    .card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    }
+</style>

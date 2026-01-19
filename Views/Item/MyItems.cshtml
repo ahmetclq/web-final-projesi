@@ -1,0 +1,126 @@
+@model IEnumerable<SwapSmart.Models.Item>
+@{
+    ViewData["Title"] = "İlanlarım";
+}
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["Success"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["Error"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>İlanlarım</h2>
+            <a asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> Yeni İlan Ver
+            </a>
+        </div>
+    </div>
+</div>
+
+@if (!Model.Any())
+{
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow-sm">
+                <div class="card-body text-center p-5">
+                    <p class="text-muted mb-4">Henüz ilan oluşturmadınız.</p>
+                    <p class="text-muted small">İlk ilanınızı vererek takasa başlayabilirsiniz.</p>
+                    <a asp-action="Create" class="btn btn-primary">İlk İlanınızı Verin</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="row g-4">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow-sm h-100 @(item.Status == ItemStatus.Completed ? "opacity-75" : "")">
+                    @if (item.Images.Any())
+                    {
+                        <img src="@item.Images.First().ImagePath" class="card-img-top" alt="@item.Title" style="height: 200px; object-fit: cover; border-radius: 16px 16px 0 0;" />
+                    }
+                    else
+                    {
+                        <div class="bg-light d-flex align-items-center justify-content-center" style="height: 200px; border-radius: 16px 16px 0 0;">
+                            <span class="text-muted">Fotoğraf Yok</span>
+                        </div>
+                    }
+                    
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">@item.Title</h5>
+                        <p class="card-text text-muted small">@(item.Description.Length > 100 ? item.Description.Substring(0, 100) + "..." : item.Description)</p>
+                        
+                        <div class="mb-2">
+                            <span class="badge bg-info">İstenen: @item.WantedItemName</span>
+                        </div>
+                        
+                        <div class="mb-2">
+                            <small class="text-muted">
+                                <strong>Değer:</strong> ₺@item.EstimatedMinValue - ₺@item.EstimatedMaxValue
+                            </small>
+                        </div>
+                        
+                        <div class="mb-2">
+                            <small class="text-muted">
+                                📍 @item.City, @item.District
+                            </small>
+                        </div>
+                        
+                        <div class="mb-3">
+                            @if (item.Status == ItemStatus.Active)
+                            {
+                                <span class="badge bg-primary">Aktif</span>
+                            }
+                            else if (item.Status == ItemStatus.InTrade)
+                            {
+                                <span class="badge bg-warning text-dark">Takasta</span>
+                            }
+                            else if (item.Status == ItemStatus.Completed)
+                            {
+                                <span class="badge bg-secondary">Tamamlandı</span>
+                            }
+                        </div>
+                        
+                        @if (item.Status == ItemStatus.Completed)
+                        {
+                            <div class="alert alert-secondary mb-3 p-2">
+                                <small>Bu ilan tamamlandı ve kilitlendi.</small>
+                            </div>
+                        }
+                        
+                        @if (item.Status == ItemStatus.Active)
+                        {
+                            <div class="mt-auto d-grid gap-2">
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-primary">Düzenle</a>
+                                <form asp-action="Delete" asp-route-id="@item.Id" method="post" onsubmit="return confirm('Bu ilanı silmek istediğinize emin misiniz?');">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="btn btn-sm btn-outline-danger w-100">Sil</button>
+                                </form>
+                            </div>
+                        }
+                        
+                        <small class="text-muted mt-2 d-block">
+                            @item.CreatedAt.ToString("dd.MM.yyyy HH:mm")
+                        </small>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

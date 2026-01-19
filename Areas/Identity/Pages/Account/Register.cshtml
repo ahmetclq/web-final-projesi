@@ -1,0 +1,145 @@
+@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Kayıt Ol";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+        <div class="card shadow-sm">
+            <div class="card-body p-5">
+                <h2 class="card-title text-center mb-4">Kayıt Ol</h2>
+                
+                <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3" role="alert"></div>
+                    
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.FullName" class="form-control" autocomplete="name" aria-required="true" placeholder="Ad Soyad" />
+                        <label asp-for="Input.FullName">Ad Soyad</label>
+                        <span asp-validation-for="Input.FullName" class="text-danger"></span>
+                    </div>
+                    
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.PhoneNumber" class="form-control" autocomplete="tel" aria-required="true" placeholder="Telefon Numarası" />
+                        <label asp-for="Input.PhoneNumber">Telefon Numarası</label>
+                        <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                    </div>
+                    
+                    <div class="form-floating mb-3">
+                        <select asp-for="Input.City" class="form-select" id="citySelect" aria-required="true" onchange="updateDistricts()">
+                            <option value="">İl Seçiniz</option>
+                            <option value="İstanbul">İstanbul</option>
+                            <option value="Ankara">Ankara</option>
+                            <option value="İzmir">İzmir</option>
+                            <option value="Bursa">Bursa</option>
+                            <option value="Antalya">Antalya</option>
+                            <option value="Adana">Adana</option>
+                            <option value="Gaziantep">Gaziantep</option>
+                            <option value="Konya">Konya</option>
+                            <option value="Kayseri">Kayseri</option>
+                            <option value="Mersin">Mersin</option>
+                        </select>
+                        <label asp-for="Input.City">İl</label>
+                        <span asp-validation-for="Input.City" class="text-danger"></span>
+                    </div>
+                    
+                    <div class="form-floating mb-3">
+                        <select asp-for="Input.District" class="form-select" id="districtSelect" aria-required="true" disabled>
+                            <option value="">Önce İl Seçiniz</option>
+                        </select>
+                        <label asp-for="Input.District">İlçe</label>
+                        <span asp-validation-for="Input.District" class="text-danger"></span>
+                    </div>
+                    
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="E-posta" />
+                        <label asp-for="Input.Email">E-posta</label>
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+                    
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="Şifre" />
+                        <label asp-for="Input.Password">Şifre</label>
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </div>
+                    
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="Şifre Tekrar" />
+                        <label asp-for="Input.ConfirmPassword">Şifre Tekrar</label>
+                        <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                    </div>
+                    
+                    <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary mt-3">Kayıt Ol</button>
+                </form>
+                
+                <div class="text-center mt-3">
+                    <p>
+                        <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">Zaten hesabınız var mı? Giriş yapın</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        const districts = {
+            "İstanbul": ["Kadıköy", "Beşiktaş", "Şişli", "Beyoğlu", "Üsküdar", "Bakırköy", "Kartal", "Pendik", "Maltepe", "Ataşehir"],
+            "Ankara": ["Çankaya", "Keçiören", "Yenimahalle", "Mamak", "Sincan", "Altındağ", "Pursaklar", "Gölbaşı", "Polatlı", "Etimesgut"],
+            "İzmir": ["Konak", "Karşıyaka", "Bornova", "Buca", "Çiğli", "Bayraklı", "Gaziemir", "Alsancak", "Balçova", "Narlıdere"],
+            "Bursa": ["Osmangazi", "Nilüfer", "Yıldırım", "Mudanya", "Gemlik", "İnegöl", "Mustafakemalpaşa", "Karacabey", "Orhangazi", "İznik"],
+            "Antalya": ["Muratpaşa", "Konyaaltı", "Kepez", "Alanya", "Manavgat", "Kaş", "Kemer", "Serik", "Gazipaşa", "Kumluca"],
+            "Adana": ["Seyhan", "Yüreğir", "Çukurova", "Sarıçam", "Karaisalı", "Pozantı", "Karataş", "Ceyhan", "İmamoğlu", "Feke"],
+            "Gaziantep": ["Şahinbey", "Şehitkamil", "Oğuzeli", "Nizip", "İslahiye", "Nurdağı", "Karkamış", "Yavuzeli", "Araban", "Islahiye"],
+            "Konya": ["Selçuklu", "Meram", "Karatay", "Akören", "Akşehir", "Altınekin", "Beyşehir", "Bozkır", "Cihanbeyli", "Çeltik"],
+            "Kayseri": ["Melikgazi", "Kocasinan", "Talas", "İncesu", "Develi", "Yahyalı", "Yeşilhisar", "Bünyan", "Tomarza", "Pınarbaşı"],
+            "Mersin": ["Akdeniz", "Mezitli", "Toroslar", "Yenişehir", "Tarsus", "Erdemli", "Silifke", "Mut", "Anamur", "Bozyazı"]
+        };
+
+        function updateDistricts() {
+            const citySelect = document.getElementById("citySelect");
+            const districtSelect = document.getElementById("districtSelect");
+            const selectedCity = citySelect.value;
+
+            // İlçe dropdown'ını temizle
+            districtSelect.innerHTML = '<option value="">İlçe Seçiniz</option>';
+
+            if (selectedCity && districts[selectedCity]) {
+                // İl seçildiyse dropdown'ı aktif et
+                districtSelect.disabled = false;
+                
+                // İlçeleri ekle
+                districts[selectedCity].forEach(district => {
+                    const option = document.createElement("option");
+                    option.value = district;
+                    option.textContent = district;
+                    districtSelect.appendChild(option);
+                });
+            } else {
+                // İl seçilmediyse dropdown'ı devre dışı bırak
+                districtSelect.disabled = true;
+                districtSelect.innerHTML = '<option value="">Önce İl Seçiniz</option>';
+            }
+        }
+
+        // Sayfa yüklendiğinde form submit edilirse ilçe seçimi kontrolü
+        document.getElementById("registerForm").addEventListener("submit", function(e) {
+            const citySelect = document.getElementById("citySelect");
+            const districtSelect = document.getElementById("districtSelect");
+            
+            if (!citySelect.value) {
+                e.preventDefault();
+                alert("Lütfen bir il seçiniz.");
+                return false;
+            }
+            
+            if (!districtSelect.value) {
+                e.preventDefault();
+                alert("Lütfen bir ilçe seçiniz.");
+                return false;
+            }
+        });
+    </script>
+}

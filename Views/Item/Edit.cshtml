@@ -1,0 +1,70 @@
+@model SwapSmart.Models.ViewModels.EditItemViewModel
+@{
+    ViewData["Title"] = "İlanı Güncelle";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-10 col-lg-8">
+        <div class="card shadow-sm">
+            <div class="card-body p-5">
+                <h2 class="card-title text-center mb-4">İlanı Güncelle</h2>
+                
+                <form asp-action="Edit" method="post">
+                    <input type="hidden" asp-for="Id" />
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3" role="alert"></div>
+                    
+                    <div class="mb-3">
+                        <label asp-for="Title" class="form-label fw-bold"></label>
+                        <input asp-for="Title" class="form-control" placeholder="Örn: İkinci el iPhone 12" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label asp-for="Description" class="form-label fw-bold"></label>
+                        <textarea asp-for="Description" class="form-control" rows="5" placeholder="Ürününüz hakkında detaylı bilgi verin..."></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label asp-for="EstimatedMinValue" class="form-label fw-bold"></label>
+                            <div class="input-group">
+                                <input asp-for="EstimatedMinValue" class="form-control" type="number" min="0" placeholder="Min" />
+                                <span class="input-group-text">₺</span>
+                            </div>
+                            <span asp-validation-for="EstimatedMinValue" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="EstimatedMaxValue" class="form-label fw-bold"></label>
+                            <div class="input-group">
+                                <input asp-for="EstimatedMaxValue" class="form-control" type="number" min="0" placeholder="Max" />
+                                <span class="input-group-text">₺</span>
+                            </div>
+                            <span asp-validation-for="EstimatedMaxValue" class="text-danger"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label asp-for="WantedItemName" class="form-label fw-bold"></label>
+                        <input asp-for="WantedItemName" class="form-control" placeholder="Örn: Samsung Galaxy S21" />
+                        <small class="form-text text-muted">Bu ürünü takas etmek istediğiniz ürün adı</small>
+                        <span asp-validation-for="WantedItemName" class="text-danger"></span>
+                    </div>
+                    
+                    <div class="alert alert-info mb-3">
+                        <strong>📍 Konum:</strong> @Model.City, @Model.District (Değiştirilemez)
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">Değişiklikleri Kaydet</button>
+                        <a asp-action="MyItems" class="btn btn-outline-secondary">İptal</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
